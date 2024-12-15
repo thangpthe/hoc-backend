@@ -1,0 +1,79 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete User</title>
+    <link rel="stylesheet" href="../public/css/homepage.css" />
+  </head>
+  <style>
+    .topnav {
+      background-color: #333;
+      overflow: hidden;
+    }
+
+    /* Style the links inside the navigation bar */
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    /* Change the color of links on hover */
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    /* Add a color to the active/current link */
+    .topnav a.active {
+      background-color: #04aa6d;
+      color: white;
+    }
+
+    .form {
+      width: 500px;
+      margin: 24px auto;
+    }
+
+    .input-group {
+      padding: 10px;
+    }
+
+    .button {
+      margin: 10px;
+      cursor: pointer;
+    }
+
+    .d-none {
+      display: none;
+    }
+  </style>
+  <body>
+    <div class="topnav">
+      <a href="/">Home</a>
+      <a href="/create">Create Users</a>
+    </div>
+
+    <div class="form">
+      <form method="post" action="/delete-user">
+        <fieldset>
+          <legend>Update user</legend>
+          <div class="input-group d-none">
+            <label>ID:</label>
+            <input type="text" name="userId" value="<%= userEdit.id %>" />
+          </div>
+          <div class="input-group">
+            <label>Are you sure to delete user with Email:</label>
+            <input type="text" name="email" value="<%= userEdit.email %>" />
+          </div>
+          <div>
+            <button>Confirm</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>
